@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "概率抽奖"
+date:   2016-09-27 14:44
+categories: jekyll update
+comments: true
+---
+
+
+```ruby
+
+  # 概率抽奖
+  def lucky_draw
+    point_lotteries =  [
+        {id:1,percent:10},
+        {id:2,percent:10},
+        {id:3,percent:10},
+        {id:4,percent:30},
+        {id:5,percent:20},
+        {id:6,percent:20}
+    ]
+    #中奖概率基数
+    num = 100
+    point_lotteries.each do |pl|
+        lottery_num = rand(1..num)
+        if lottery_num <= pl.percent
+            point_lottery = pl #抽中某个奖项
+            break
+        else
+            #假设当前奖项第5次,percent=20%,lottery_num>20则没中五等奖,前五次循环都没中则总获奖基数 num = 100-10-10-10-30-20=20,必中6等奖
+            num -= pl.Percent
+        end
+     end
+
+
+```

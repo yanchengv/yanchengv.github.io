@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "frps反向代理配置"
+date:   2017-06-05 17:24
+categories: Lorem
+comments: true
+---
+
+
+### 服务器端配置
+
+文件frps.ini配置
+
+```ruby
+
+    [common]
+    #bind_addr = 0.0.0.0
+    bind_addr = 0.0.0.0
+    bind_port = 7000
+    vhost_http_port = 9002
+    dashboard_port = 9000
+    dashboard_user = admin
+    dashboard_pwd = admin
+    subdomain_host = frp.yan.com
+    privilege_mode = true
+    privilege_token = 12345678
+    [web3]
+    type = http
+    custom_domains = frps.yan.com
+    auth_token = 123
+    subdomain = test
+
+
+```
+
+### 客户端配置
+
+文件frp.ini配置：
+
+```ruby
+
+    [common]
+    server_addr = 45.32.252.143
+    server_port = 7000
+    privilege_token = 12345678
+
+    [web0]
+    privilege_mode = true
+    type = http
+    local_ip = 127.0.0.1
+    local_port = 3000
+    auth_token = 123
+    subdomain = wx
+    #custom_domains = frp.yan.com
+
+```
+
+通过wx.frp.yan.com/ 可以访问本地端口为3000的项目

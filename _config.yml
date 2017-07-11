@@ -29,7 +29,7 @@ author:
   github   : https://github.com/yanchengv
 
 
-paginate: 2
+paginate: 10
 comments: true
 paginate_path: "/page/:num"
 

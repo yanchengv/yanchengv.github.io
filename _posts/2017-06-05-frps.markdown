@@ -40,7 +40,7 @@ comments: true
 ```ruby
 
     [common]
-    server_addr = 45.32.252.143
+    server_addr = 120.32.252.154
     server_port = 7000
     privilege_token = 12345678
 

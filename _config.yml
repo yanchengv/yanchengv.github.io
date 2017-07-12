@@ -37,15 +37,16 @@ sass:
   sass_dir: _sass
 
 # Build settings
-#markdown  : kramdown
-markdown  : redcarpet
+markdown  : kramdown
+#kramdown:
+#    input: GFM
+#highlighter: rouge
 permalink : /:title/
 
 
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - redcarpet
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

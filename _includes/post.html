@@ -8,6 +8,5 @@
   </header>
   <div class="post-content">
     {{ post.content | strip_html | truncatewords: 30 }}
-    <a href="{{ post.url | prepend: site.baseurl }}" class="readmore">更多 &raquo;</a>
   </div>
 </article>

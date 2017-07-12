@@ -7,7 +7,7 @@ comments: true
 ---
 
 
-```ruby
+```sh
 
 git branch 查看本地所有分支
 git status 查看当前状态

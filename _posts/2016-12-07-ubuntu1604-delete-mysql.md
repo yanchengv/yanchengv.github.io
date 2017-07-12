@@ -6,17 +6,14 @@ categories: jekyll update
 comments: true
 ---
 
-
-## ubuntu 彻底删除 MYSQL 然后重装 MYSQL 删除 mysql
-
-{% highlight bash %}
+```sh
 
 sudo apt autoremove --purge mysql-server-5.0
 sudo apt remove mysql-server
 sudo apt autoremove mysql-server
 sudo apt remove mysql-common #这个很重要
 
-{% endhighlight %}
+```
 
 上面的其实有一些是多余的。
 清理残留数据
@@ -25,13 +22,13 @@ sudo apt remove mysql-common #这个很重要
 
 安装 mysql
 
-{% highlight bash %}
-
+```sh
 sudo apt-get install mysql-server
 sudo apt-get install mysql-client
 sudo apt-get install php5-mysql 
 
-{% endhighlight %}
+```
+
 
 安装php5-mysql 是将php和mysql连接起来
 一旦安装完成，MySQL 服务器应该自动启动。您可以在终端提示符后运行以下命令来检查 MySQL 服务器是否正在运行：

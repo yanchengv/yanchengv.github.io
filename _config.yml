@@ -44,9 +44,16 @@ markdown  : kramdown
 permalink : /:title/
 
 
+jekyll-archives:
+  enabled: all
+  layout: 'archive'
+  permalinks:
+    category: '/category/:name/'
+
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-archives
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

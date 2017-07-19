@@ -44,12 +44,6 @@ markdown  : kramdown
 permalink : /:title/
 
 
-jekyll-archives:
-  enabled: all
-  layout: 'archive'
-  permalinks:
-    category: '/category/:name/'
-
 plugins:
   - jekyll-feed
   - jekyll-paginate

@@ -2,7 +2,7 @@
 layout: post
 title:  "安装php composer"
 date:   2017-01-16 17:24
-categories: Lorem
+categories: php
 comments: true
 ---
 

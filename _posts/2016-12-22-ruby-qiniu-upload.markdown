@@ -2,7 +2,7 @@
 layout: post
 title:  "七牛远程上传:远程获取图片的url 上传到七牛"
 date:   2016-12-22 13:00:08
-categories: Lorem
+categories: rails 七牛
 comments: true
 ---
 

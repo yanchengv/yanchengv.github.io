@@ -2,7 +2,7 @@
 layout: post
 title:  "ruby 获取远程图片jpg/png 的url,转换为base64"
 date:   2016-12-07
-categories: jekyll update
+categories: rails
 comments: true
 ---
 

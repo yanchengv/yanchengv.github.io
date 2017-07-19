@@ -2,7 +2,7 @@
 layout: post
 title:  "rails时间处理"
 date:   2017-03-30 17:24
-categories: Lorem
+categories: rails
 comments: true
 ---
 

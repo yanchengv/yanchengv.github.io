@@ -2,7 +2,7 @@
 layout: post
 title:  "ubuntu彻底删除mysql然后重装mysql"
 date:   2016-12-07
-categories: jekyll update
+categories: ubuntu mysql
 comments: true
 ---
 

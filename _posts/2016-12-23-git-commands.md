@@ -2,7 +2,7 @@
 layout: post
 title:  "Git 常用命令速查"
 date:   2016-12-23 13:00:08
-categories: Lorem
+categories: git
 comments: true
 ---
 

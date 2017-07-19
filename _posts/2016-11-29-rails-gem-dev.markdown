@@ -2,7 +2,7 @@
 layout: post
 title:  "开发gem"
 date:   2016-11-29 14:44
-categories: jekyll update
+categories: rails
 comments: true
 ---
 

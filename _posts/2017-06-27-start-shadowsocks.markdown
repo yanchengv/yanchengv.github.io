@@ -2,7 +2,7 @@
 layout: post
 title:  "启动shadowsocks命令(客户端、服务器端)"
 date:   2017-06-05 17:24
-categories: Lorem
+categories: shadowsocks
 comments: true
 ---
 

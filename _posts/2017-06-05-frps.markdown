@@ -2,7 +2,7 @@
 layout: post
 title:  "frps反向代理配置"
 date:   2017-06-05 17:24
-categories: Lorem
+categories: frps
 comments: true
 ---
 

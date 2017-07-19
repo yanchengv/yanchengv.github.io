@@ -2,7 +2,7 @@
 layout: post
 title:  "rails取消turbolinks 解决页面跳转后不加载js问题"
 date:   2017-03-30 17:24
-categories: Lorem
+categories: rails
 comments: true
 ---
 

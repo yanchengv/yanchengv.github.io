@@ -2,7 +2,7 @@
 layout: post
 title:  "ubuntu16.04 不能拓展双屏的解决办法"
 date:   2016-12-07
-categories: jekyll update
+categories: ubuntu
 comments: true
 ---
 

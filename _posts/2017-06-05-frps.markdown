@@ -7,7 +7,7 @@ comments: true
 ---
 
 
-### 服务器端配置
+#### 服务器端配置
 
 文件frps.ini配置
 
@@ -33,7 +33,7 @@ comments: true
 
 ```
 
-### 客户端配置
+#### 客户端配置
 
 文件frp.ini配置：
 

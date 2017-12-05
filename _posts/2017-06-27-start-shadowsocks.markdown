@@ -6,12 +6,11 @@ categories: shadowsocks
 comments: true
 ---
 
-# 启动shadowsocks命令(客户端、服务器端)
 
-服务器端启动命令：
 
-```ssserver -c /etc/shadowsocks.json```
+> * 服务器端启动命令：``` ssserver -c /etc/shadowsocks.json ```
 
-客户端器端启动命令：
 
-```ss-local -c /etc/shadowsocks_client.json```
+
+> * 客户端器端启动命令：``` ss-local -c /etc/shadowsocks_client.json ```
+

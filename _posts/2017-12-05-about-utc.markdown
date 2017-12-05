@@ -1,11 +1,10 @@
 ---
+title: 关于UTC、GMT、ISO8601、
 layout: post
-title:  "关于UTC、GMT、ISO8601、"
-date:   2017-12-05 14:00
+date: 2017-12-05 14:00
 categories: rails
 comments: true
 ---
-
 
 #### 1. GMT:
 
@@ -75,7 +74,11 @@ balawo > Time.now.utc.iso8601
 
 4.在``` ruby ```中，你可以用 ``` strftime ``` 创建自己想要的```iso8601```格式:
 
-  ```Time.now.strftime('%Y-%m-%dT%H:%M:%S.%L%z') ```
+```ruby
+	
+	Time.now.strftime('%Y-%m-%dT%H:%M:%S.%L%z')
+	
+```
 
 #### 参考资料
 

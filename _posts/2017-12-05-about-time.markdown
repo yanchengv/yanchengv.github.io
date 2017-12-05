@@ -39,16 +39,16 @@ ISO 8601的标准格式是：YYYY-MM-DDTHH:mm:ss.sss，分别表示：
 例如：
 
 ```ruby
-localhost:~ iuzuan$ irb
-2.4.1 :001 > Time.now.utc.iso8601
+localhost:~ balawo$ irb
+balawo > Time.now.utc.iso8601
 NoMethodError: undefined method `iso8601' for 2017-12-05 03:12:48 UTC:Time
 	from (irb):1
 	from /Users/iuzuan/.rvm/rubies/ruby-2.4.1/bin/irb:11:in `<main>'
-localhost > require 'time'
+balawo > require 'time'
  => true
-localhost > Time.now.utc.iso8601
+balawo > Time.now.utc.iso8601
  => "2017-12-05T03:13:01Z"
-localhost > Time.now.iso8601
+balawo > Time.now.iso8601
  => "2017-12-05T11:13:13+08:00"
 
 ```
@@ -57,7 +57,7 @@ localhost > Time.now.iso8601
 
 2.
 ```ruby
-localhost > Time.now.iso8601
+balawo > Time.now.iso8601
 => 2017-12-05T11:13:13+08:00
 
 ```
@@ -67,14 +67,14 @@ localhost > Time.now.iso8601
 3.
 ```ruby
 
-localhost > Time.now.utc.iso8601
+balawo > Time.now.utc.iso8601
 => 2017-12-05T11:13:13+08:00
 
 ```
 
 ``` Time.now.utc.iso8601 ``` 表示UTC时区。"2017-12-05T03:13:01Z" 则时间后面会带'Z',表示这是utc时区,不是本地时区。那么再转换为北京当地时间展示时就会加上 8 小时的偏移，变成：2017-12-05T11:13:13+08:00。
 
-4.在```ruby```中，你可以用 ```strftime``` 创建自己想要的```iso8601```格式:
+4.在``` ruby ```中，你可以用 ``` strftime ``` 创建自己想要的```iso8601```格式:
 
   ```Time.now.strftime('%Y-%m-%dT%H:%M:%S.%L%z') ```
 

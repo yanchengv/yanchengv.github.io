@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "关于UTC、GMT、ISO8601、"
+date:   2017-06-05 17:24
+categories: shadowsocks
+comments: true
+---
+
+
+
+### 1. GMT:
+
+最开始的标准时间（子午线中心处的时间）是英国伦敦的皇家格林威治天文台的标准时间（因为它刚好在本初子午线经过的地方），这就是我们常说的 GMT（Greenwich Mean Time）。然后其他各个时区根据标准时间确定自己的时间，往东的时区时间晚（表示为 GMT+hh:mm）、往西的时区时间早（表示为 GMT-hh:mm）。比如，中国标准时间是东八区，我们的时间就总是比 GMT 时间晚 8 小时，他们在凌晨 1 点，我们已经是早晨 9 点了。
+
+但是 GMT 其实是根据地球自转、公转计算的（太阳每天经过英国伦敦皇家格林威治天文台的时间为中午 12 点），不是非常准确，于是后面提出了根据原子钟计算的标准时间 UTC（Coordinated Universal Time）。
+
+一般情况下，GMT 和 UTC 可以互换，但是实际上，GMT 是一个时区，而 UTC 是一个时间标准。
+
+### 2. UTC:
+
+是时间标准，协调世界时，又称世界统一时间、世界标准时间、国际协调时间。英文(Coordinated Universal Time)简称UTC.
+
+
+例如：当我们“展示”某个时间时，明确时区就变得非常重要了。不然你只说现在是 2016-01-11 19:30:00，然后不告诉我时区，我其实是没法准确知道时间的（当然，我可以认为这个时间是我所在时区的当地时间）。如果你说现在是 2016-01-11 19:30:00 GMT+0800，那我就知道这个时间是东八区的时间了。如果我在东八区，那时间就是 19:30，如果我在 GMT 时区，那时间就是 11:30（减掉 8 小时）。
+
+### 3. ISO 8601:
+
+是表示时间的格式，多数编程语言都支持。
+ISO 8601的标准格式是：YYYY-MM-DDTHH:mm:ss.sss，分别表示：
+> * YYYY：年份，0000 ~ 9999
+> * MM：月份，01 ~ 12
+> * DD：日，01 ~ 31
+> * T：分隔日期和时间
+> * HH：小时，00 ~ 24
+> * mm：分钟，00 ~ 59
+> * ss：秒，00 ~ 59
+> * .sss：毫秒
+
+例如：
+
+```ruby
+localhost:~ iuzuan$ irb
+2.4.1 :001 > Time.now.utc.iso8601
+NoMethodError: undefined method `iso8601' for 2017-12-05 03:12:48 UTC:Time
+	from (irb):1
+	from /Users/iuzuan/.rvm/rubies/ruby-2.4.1/bin/irb:11:in `<main>'
+localhost > require 'time'
+ => true
+localhost > Time.now.utc.iso8601
+ => "2017-12-05T03:13:01Z"
+localhost > Time.now.iso8601
+ => "2017-12-05T11:13:13+08:00"
+
+```
+
+1."2017-12-05T11:13:13+08:00" 是符合 ISO-8601 标准的时间表示。里面的'T' 分隔日期和时间
+
+2.
+```ruby
+localhost > Time.now.iso8601
+=> 2017-12-05T11:13:13+08:00
+
+```
+
+``` Time.now.iso8601 ```默认指的是本地时区。"2017-12-05T11:13:13+08:00"没有指名时区，则默认本地时区时间
+
+3.
+```ruby
+
+localhost > Time.now.utc.iso8601
+=> 2017-12-05T11:13:13+08:00
+
+```
+
+``` Time.now.utc.iso8601 ``` 表示UTC时区。"2017-12-05T03:13:01Z" 则时间后面会带'Z',表示这是utc时区,不是本地时区。那么再转换为北京当地时间展示时就会加上 8 小时的偏移，变成：2017-12-05T11:13:13+08:00。
+
+4.在```ruby```中，你可以用 ```strftime``` 创建自己想要的```iso8601```格式:
+
+  ```Time.now.strftime('%Y-%m-%dT%H:%M:%S.%L%z') ```
+
+### 参考资料
+
+> * [https://segmentfault.com/a/1190000004292140](https://segmentfault.com/a/1190000004292140)
+
+> * [http://www.virtuouscode.com/2009/10/25/iso8601-dates-in-ruby/](http://www.virtuouscode.com/2009/10/25/iso8601-dates-in-ruby/)
+
+> * [https://apidock.com/ruby/DateTime/strftime](https://apidock.com/ruby/DateTime/strftime)

@@ -10,7 +10,7 @@ header: Posts By Category
             <div class="sidebar hidden-print" role="complementary">
                 <div id="navigation">
                     <h1>目录</h1>
-                    <ul class="nav sidenav">
+                    <ul class="nav sidenav sidenav-first">
                         {% if site.categories.first[0] == null %}
                         {% for category in site.categories %}
                         <li><a href="#{{ category }}-ref">

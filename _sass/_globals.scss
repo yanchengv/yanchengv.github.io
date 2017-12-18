@@ -48,13 +48,19 @@ textarea {
 }
 
 a {
-  color: $link-color;
-  text-decoration: underline;
+  color: #171313cc;
+  text-decoration: none;
 
   &:hover {
     transition: color .2s linear;
     text-decoration: none;
-    color: $link-hover-color;
+    color: $link-color;
+  }
+
+  &:visited {
+    transition: color .2s linear;
+    text-decoration: none;
+    color: $link-color;
   }
 }
 

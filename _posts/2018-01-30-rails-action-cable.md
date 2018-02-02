@@ -23,6 +23,7 @@ production:
 class RoomChannel < ApplicationCable::Channel
   def subscribed
     stream_from "room_channel"
+   #stream_from params[:room]  #可以是客户端创建订阅时的参数临时创建
   end
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
@@ -54,9 +55,12 @@ end
    socket = new WebSocket("ws://localhost:3001/cable");
    socket.onopen = function() {
         addMessage("Socket Status: " + socket.readyState + " (open)");
-
-        //socket.send发送订阅的频道，RoomChannel是频道的类名,这一步很关键，只有发送后才能开始接受消息
-        socket.send(JSON.stringify({"command": "subscribe","identifier":"{\"channel\":\"RoomChannel\"}"})) 
+       socket.send(JSON.stringify({"command": "subscribe","identifier":"{\"channel\":\"RoomChannel\"}"})) 
+			 
+       //socket.send发送订阅的频道，RoomChannel是频道的类名;从现有订阅中至少选择一个感兴趣的订阅，否则将无法建立连接,一旦订阅了某个频道，用户也就   成为了订阅者,room是可以让服务器端接受临时创建频道
+			 
+	  //socket.send(JSON.stringify({"command": "subscribe","identifier":"{\"channel\":\"RoomChannel\",\"room\":\"room1\"}"}))
+    
     }
 
     socket.onclose = function() {
@@ -71,6 +75,8 @@ end
 </script>
 ```
 6.执行上面的`my_broadcast`方法，前端就会收到广播
+
+7. [代码案例](https://github.com/yanchengv/action_cable_as_api_example)
 
 参考：
 

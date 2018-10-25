@@ -8,7 +8,7 @@ comments: true
 
 * 时间的定位方法
 
-```ruby
+    ```ruby
 
     Time.now + 5.days
     
@@ -26,22 +26,22 @@ comments: true
 
     Date.today.end_of_week(:saturday) #定位到本周六
 
-```
+    ```
 
 
 * 计算两个时间相差的天数
     
-```ruby
-DateTime.parse("2007-12-28") - DateTime.parse("2007-12-26")=>2
-```
+    ```ruby
+    DateTime.parse("2007-12-28") - DateTime.parse("2007-12-26")=>2
+    ```
 
 * 计算两个时间相差的秒数
 
-```ruby
-(DateTime.parse("Dec  2 03:12:19 2005") - DateTime.parse("Dec 2 14:44:47 2005")) * 24 * 60 * 60 =>-41548
-```
+    ```ruby
+    (DateTime.parse("Dec  2 03:12:19 2005") - DateTime.parse("Dec 2 14:44:47 2005")) * 24 * 60 * 60 =>-41548
+    ```
 * 计算两个时间相差的分钟数
 
-```ruby
-(DateTime.parse("DateTime.parse(Time.now.strftime("%Y-%m-%d %H:%M:%S")") - DateTime.parse("2016-5-12 15:20:20")) * 24 * 60  => (1321/20)
-```
+    ```ruby
+    (DateTime.parse("DateTime.parse(Time.now.strftime("%Y-%m-%d %H:%M:%S")") - DateTime.parse("2016-5-12 15:20:20")) * 24 * 60  => (1321/20)
+    ```

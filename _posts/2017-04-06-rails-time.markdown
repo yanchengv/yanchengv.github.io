@@ -27,5 +27,10 @@ comments: true
 
     Date.today.end_of_week(:saturday) #定位到本周六
 
+    # 时间加减算法
+    
+    * 计算两个时间相差的天数
+    
+    DateTime.parse("2007-12-28") - DateTime.parse("2007-12-26")=>2
 
 ```

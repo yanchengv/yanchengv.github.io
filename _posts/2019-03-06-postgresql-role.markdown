@@ -43,6 +43,6 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO readaccess;
 ```
 4、创建用户
 ```
-CREATE USER tomek WITH PASSWORD 'mypassword';
+CREATE USER testuser WITH PASSWORD 'mypassword';
 GRANT readaccess TO testuser;
 ```

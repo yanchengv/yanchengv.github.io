@@ -25,6 +25,8 @@ comments: true
     time_end = Time.now.end_of_month   #当前日期所在月的终止时间
 
     Date.today.end_of_week(:saturday) #定位到本周六
+  
+    "2019-10-09 12:00:00 -0800".to_time.localtime #西八区的时间转换成本地时间
 
     ```
 

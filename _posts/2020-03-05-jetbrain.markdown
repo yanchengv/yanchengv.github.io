@@ -1,13 +1,13 @@
 ---
-title: RubyMine 2019.2版本详细安装破解教程(永久激活，非一年注册码）
+title: jetbrain IDE(RubyMine和IDEA)安装破解教程 (永久激活，非一年注册码）
 layout: post
 date: '2020-03-05 13:49:36'
 categories: IDE
 ---
 
-**下面教程和破解包适用于 rubymine和IDEA （jetbrains旗下的其它IDE没有测试过）** 
+**下面教程和破解包适用于 rubymine和IDEA （jetbrains旗下的其它IDE没有测试过~）** 
 
-**亲测使用下面教程破解了 rails的开发工具 rubymine 2017.3版本 和java 的开发工具 IntelliJ IDEA 2019.3版本**
+**亲测使用下面教程破解了 rails的开发工具 rubymine 2017.3版本、2019.3版本 和java 的开发工具 IntelliJ IDEA 2019.3版本**
 
 # 教程：
 

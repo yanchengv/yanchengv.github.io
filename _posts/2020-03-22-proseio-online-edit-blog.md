@@ -1,10 +1,10 @@
 ---
 published: true
 layout: post
-date: '2019-05-16 19:57:26'
-categories: ubuntu
+date: '2020-03-22 13:26:26'
+categories: rails
 ---
-## 利用prose.io 可在线编辑部署在github的jekyll项目
+# 利用prose.io 可在线编辑部署在github的jekyll项目
 
 ### 在github page上面使用开源jekyll部署个人blog，但是每次修改需要clone项目在本地修改，然后提交github进行部署。本地部署JEKYLL很麻烦，更无法做到随时随地发表修改文章。
 

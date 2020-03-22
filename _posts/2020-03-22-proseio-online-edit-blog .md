@@ -1,5 +1,8 @@
 ---
 published: false
+layout: post
+date: '2019-05-16 19:57:26'
+categories: ubuntu
 ---
 ## 利用prose.io 可在线编辑部署在github的jekyll项目
 

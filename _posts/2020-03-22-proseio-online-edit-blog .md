@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 date: '2019-05-16 19:57:26'
 categories: ubuntu

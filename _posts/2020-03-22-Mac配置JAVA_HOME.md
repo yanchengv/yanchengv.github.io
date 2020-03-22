@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 date: '2020-03-22 17:35:26'
 categories: java
@@ -35,13 +35,3 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.6+8-LTS, mixed mode)
 
 让配置立即生效 `source ~/.bash_profile`
 查看已插入的JAVA_HOME ,输入域`echo $JAVA_HOME`如果可以看到刚刚配置的PATH则说明配置成功！
-
-
-
-
- 
- 
- 
- 
-
-

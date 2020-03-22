@@ -22,7 +22,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  balawo
 
 author:
-  name     : 'yancheng'
+  name     : 'yan'
   email    : balawo@126.com
   url      : http://balawo.com
   github   : https://github.com/yanchengv
@@ -48,6 +48,10 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-archives
+
+#Disqus评论系统配置
+disqus:
+  shortname: balawo
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

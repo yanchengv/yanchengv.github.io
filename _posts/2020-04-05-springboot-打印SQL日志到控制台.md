@@ -1,5 +1,8 @@
 ---
-published: false
+published: true
+layout: post
+date: '2020-04-05 12:55:26'
+categories: java
 ---
 ## Springboot配置application.yml文件，打印SQL日志到控制台
 

@@ -31,6 +31,7 @@ flyway要求为每一次数据库schema变更创建一个sql语句，以V（双�
 src
 |--main   
    |--java
+      |--balawo
    |--resources
       |--db
          |--migration
@@ -109,9 +110,9 @@ flyway支持命令行，java api，maven，gradle等各种方式调用。我的�
                     <password>1234</password>
                     <driver>org.postgresql.Driver</driver>
                     <url>jdbc:postgresql://localhost:5432/my_java</url>
-                    <!-- 配置数据库脚本位置，本里中对应admin/src/main/resources/db/migration -->
+                    <!-- 配置数据库脚本位置，官方默认放在 /src/main/resources/db/migration -->
                     <locations>
-                        <location>admin/src/main/resources/db/migration</location>
+                        <location>classpath:/db/migration</location>
                     </locations>
                      <!--版本表名称-->
                       <table>schema_migrations</table>

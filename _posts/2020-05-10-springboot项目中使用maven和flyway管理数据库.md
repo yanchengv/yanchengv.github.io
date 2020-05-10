@@ -113,10 +113,8 @@ flyway支持命令行，java api，maven，gradle等各种方式调用。我的�
                     <locations>
                         <location>admin/src/main/resources/db/migration</location>
                     </locations>
-                    <!--版本表名称-->
-                    <schemas>
-                        <schema>schema_migrations</schema>
-                    </schemas>
+                     <!--版本表名称-->
+                      <table>schema_migrations</table>
                     <!-- 设置sql脚本文件的编码 -->
                     <encoding>UTF-8</encoding>
                 </configuration>

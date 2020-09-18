@@ -119,8 +119,12 @@ end
 	}
 
 		```
+		
+7.启动cable(socket服务器，启动cable作为独立服务器)
+- 启动cable作为独立服务器,  开发环境： ```bundle exec puma -p 28080 cable/config.ru```
+- 启动cable作为独立服务器, 生产环境： ```bundle exec puma -p 28080 cable/config.ru  -e production```
 
-6. [代码案例](https://github.com/yanchengv/action_cable_as_api_example)
+8. [代码案例](https://github.com/yanchengv/action_cable_as_api_example)
 
 参考：
 

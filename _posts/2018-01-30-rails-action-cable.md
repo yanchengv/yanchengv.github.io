@@ -31,11 +31,8 @@ class RoomChannel < ApplicationCable::Channel
 
 end
 ```
-**3.routes.rb添加**
-```
-mount ActionCable.server => '/cable'
-```
-**4.创建发布消息方法**
+
+**3.创建发布消息方法**
 ```
 def my_broadcast
 ActionCable.server.broadcast(
@@ -45,14 +42,18 @@ ActionCable.server.broadcast(
       )
 end
 ```
-**5.前端js订阅websocket接口**
+**4.前端js订阅websocket接口**
 ```
 <stript>
     function addMessage(msg) {
         $("#log").append("<p>" + msg + "</p>");
     }
 
-   socket = new WebSocket("ws://localhost:3001/cable");
+ // 本地测试的地址是ws://localhost:28080 
+// 正式的地址则是下面nginx配置的地址  `socket = new WebSocket("ws://www.balawo.com/cable");`,
+// 如果是https则是 `socket = new WebSocket("wss://www.balawo.com/cable");`
+	
+   socket = new WebSocket("ws://localhost:28080");
    socket.onopen = function() {
         addMessage("Socket Status: " + socket.readyState + " (open)");
        socket.send(JSON.stringify({"command": "subscribe","identifier":"{\"channel\":\"RoomChannel\"}"})) 
@@ -74,9 +75,52 @@ end
 
 </script>
 ```
-6.执行上面的`my_broadcast`方法，前端就会收到广播
+5.执行上面的`my_broadcast`方法，前端就会收到广播
 
-7. [代码案例](https://github.com/yanchengv/action_cable_as_api_example)
+6. 如果是正式环境 则需要配置nginx 
+   
+```
+
+	upstream balawo_web {
+				 server unix:/data/www/balawo_web/shared/tmp/sockets/puma.sock fail_timeout=0;
+		    }
+  
+	server {
+	 listen 80;
+	 server_name www.balawo.com;
+	 root /data/www/balawo_web/current/public;
+	 location ~* ^(/assets|/favicon.ico|/41orptZsat.txt) {
+			gzip_static on;
+			access_log        off;
+			expires           max;
+			add_header Cache-Control public;
+    }
+
+    location / {
+      client_max_body_size 100m;         #主要是这个参数，限制了上传文件大大小
+      proxy_redirect     off;
+      proxy_set_header   Host $host;
+      proxy_set_header   X-Forwarded-Host $host;
+      proxy_set_header   X-Forwarded-Server $host;
+      proxy_set_header   X-Real-IP        $remote_addr;
+      proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+      proxy_buffering    on;
+      proxy_pass         http://balawo_web;
+      access_log /data/www/balawo_web/shared/log/nginx.access.log;
+      error_log /data/www/balawo_web/shared/log/nginx.error.log;
+
+    }
+    location /cable {
+       proxy_pass           http://127.0.0.1:28080/;
+       proxy_http_version 1.1;
+       proxy_set_header Upgrade $http_upgrade;
+       proxy_set_header Connection "Upgrade";
+  }
+	}
+
+		```
+
+6. [代码案例](https://github.com/yanchengv/action_cable_as_api_example)
 
 参考：
 

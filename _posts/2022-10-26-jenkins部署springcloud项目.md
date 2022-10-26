@@ -12,6 +12,11 @@ categories: java
 ![](/20221022_jenkins02.png)
 
 3、构建打包后的配置
+
+  **注意 上传jar包时，构建后上传路径source files必须是jenkins工作空间的相对路径**
+	`/Users/yan/.jenkins/workspace/springcloud2022/balawo-order/target/balawo-order.jar`
+	**构建后的souce files输入框要填写**` balawo-order/target/balawo-order.jar`
+	
 ![](/20221022_jenkins03.png)
 
 4、服务器启动/停止脚本

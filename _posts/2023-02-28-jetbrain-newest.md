@@ -2,7 +2,7 @@
 title: jetbrain IDE(2022RubyMine和2022IDEA)最新安装破解教程 (永久激活，非一年注册码）
 layout: post
 date: '2023-02-28 16:21:30'
-categories: IDE破解
+categories: IDE
 ---
 
 **下面教程和破解包适用于 rubymine和IDEA （jetbrains旗下的其它IDE没有测试过~）** 
